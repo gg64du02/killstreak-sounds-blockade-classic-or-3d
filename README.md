@@ -19,6 +19,11 @@ Restart if you did not meet the requirements on the first start.
 Enjoy.
 
 
+## PREVIEW:
+
+https://www.youtube.com/watch?v=wsqemdEPgCA
+
+
 ## HOW TO MODIFY IT:
 
 Please read the TODO.md
