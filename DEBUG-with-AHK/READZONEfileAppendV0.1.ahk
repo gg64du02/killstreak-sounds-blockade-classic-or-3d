@@ -13,10 +13,10 @@ ReadZone(){
 	;check position
 	;check color
 	
-	TopLeftX = 974
-	TopLeftY = 397
-	BotRightX = 939
-	BotRightY = 377
+	TopLeftX = 909
+	TopLeftY = 903
+	BotRightX = 911
+	BotRightY = 905
 	
 	indexX := TopLeftX - BotRightX
 	indexY := TopLeftY - BotRightY

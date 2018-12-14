@@ -3,8 +3,8 @@
 return
 
 ReadZone(){
-	FileName =D:\AHK_Scripts\output_zoneV0.2.txt
-	;FileName =output_zoneV0.2.txt
+	;FileName =D:\AHK_Scripts\output_zoneV0.2.txt
+	FileName =output_zoneV0.2.txt
 	file := FileOpen(FileName, "w")
 	if !IsObject(file)
 	{
@@ -17,10 +17,15 @@ ReadZone(){
 	file.Write(equalsString)
 	
 	
-	TopLeftX = 974
-	TopLeftY = 397
-	BotRightX = 939
-	BotRightY = 377
+	;TopLeftX = 974
+	;TopLeftY = 397
+	;BotRightX = 939
+	;BotRightY = 377
+	
+	TopLeftX = 1130
+	TopLeftY = 770
+	BotRightX = 1117
+	BotRightY = 758
 	
 	indexX := TopLeftX - BotRightX
 	indexY := TopLeftY - BotRightY
