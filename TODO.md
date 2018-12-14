@@ -1,4 +1,6 @@
 # killstreak-sounds-blockade3d
+
+;TODO: create a new script for the global update (the old one no longer works)
 	
 ;READ ME DEV
 
