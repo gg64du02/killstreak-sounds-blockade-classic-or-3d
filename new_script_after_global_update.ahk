@@ -98,6 +98,8 @@ isTotalOn(){
 	;TopLeftY = 770
 	
 	;ok
+	static xIsAliveTotal
+	static yIsAliveTotal
 	xIsAliveTotal := 1117
 	yIsAliveTotal := 770
 	PixelGetColor, color, xIsAliveTotal, yIsAliveTotal, RGB
@@ -144,16 +146,6 @@ isPlayerAlive()
 	PixelGetColor, color, xIsAlive, yIsAlive, RGB
 	;MsgBox IsAlive:%xIsAlive%,%yIsAlive%
 	
-	;debugging purpose
-	;Send {ESC}
-	;Sleep, 5000
-	;MouseClick, X1, xIsAlive , yIsAlive , 1, 0
-	;Sleep, 5000
-	
-	;MsgBox The color at the current cursor position is %color%.
-	;bugfix v0.8
-	;if(color = "0xFF0000"){
-	;here
 	;debugging purpose
 	;MsgBox %color%
 	if(color = "0x272727"){
