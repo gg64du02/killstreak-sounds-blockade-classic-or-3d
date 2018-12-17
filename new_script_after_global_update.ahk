@@ -23,6 +23,9 @@ ListLines Off
 	CREDITS: idea and sounds by [D]arktooth (Steam) with AutoHotKey
 	)
 	
+	;TODO insert GUI around here
+	;TODO test the screen ration to decide how to do the cross multiplication
+	
 
 	;TODO: need to be speed up way more
 	;TODO: need to add rejection of fa&lse detection on isTotalOn
@@ -49,7 +52,7 @@ ListLines Off
 				;MsgBox %killstreakNumber%
 				while(isTotalOn=1){
 					isTotalOn := isTotalOn()
-					sleep, 50
+					;sleep, 50
 				}
 			}
 			
@@ -101,7 +104,7 @@ ListLines Off
 		}
 		
 		;delay in ms
-		Sleep, 50
+		;Sleep, 50
 		
 	}
 
