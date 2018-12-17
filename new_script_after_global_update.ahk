@@ -1,94 +1,109 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+﻿
+ListLines Off
 
-;making the 1920*1080 (actual desktop resolution) set as 1024*768 (in game settings resolution)
+	;making the 1920*1080 (actual desktop resolution) set as 1024*768 (in game settings resolution)
 
-; ListLines Off
+	;===========PLEASE SET ME UP===========
+	SysGet, VirtualScreenWidth, 78
+	SysGet, VirtualScreenHeight, 79
+	
+	global sreenWidth   := VirtualScreenWidth
+	global screenHeight := VirtualScreenHeight
+	
+	MsgBox,
+	(
+	TODO: update ME
+	DETECTED DESKTOP RESOLUTION: %VirtualScreenWidth%,%VirtualScreenHeight%
+	
+	ATTENTION: Go fullscreen in order to get it to work
+	;ATTENTION: Desktop and ingame resolution HAVE TO BE THE SAME
+	ATTENTION: This script was made for ONE SCREEN USER
+	
+	CREDITS: freely created by gg64du02 (Steam)
+	CREDITS: idea and sounds by [D]arktooth (Steam) with AutoHotKey
+	)
+	
 
-;MButton::
-
-;TODO: need to be speed up way more
-;TODO: need to add rejection of fa&lse detection on isTotalOn
+	;TODO: need to be speed up way more
+	;TODO: need to add rejection of fa&lse detection on isTotalOn
 
 
-;initialization for uniq killstreak's sounds triggering per life
-2kill := 1
-3kill := 1
-4kill := 1
-5kill := 1
-6kill := 1
-7kill := 1
+	;initialization for uniq killstreak's sounds triggering per life
+	2kill := 1
+	3kill := 1
+	4kill := 1
+	5kill := 1
+	6kill := 1
+	7kill := 1
 
-killstreakNumber := 0
+	killstreakNumber := 0
 
 
-;en permanence
-While(1){
-	if(isPlayerAlive() =1){
-		isTotalOn := isTotalOn()
-		if(isTotalOn = 1){
-			killstreakNumber++
-			;debugging purpose
-			;MsgBox %killstreakNumber%
-			while(isTotalOn=1){
-				isTotalOn := isTotalOn()
-				sleep, 50
+	;en permanence
+	While(1){
+		if(isPlayerAlive() =1){
+			isTotalOn := isTotalOn()
+			if(isTotalOn = 1){
+				killstreakNumber++
+				;debugging purpose
+				;MsgBox %killstreakNumber%
+				while(isTotalOn=1){
+					isTotalOn := isTotalOn()
+					sleep, 50
+				}
 			}
+			
+			;MsgBox %killstreakNumber%
+			
+			
+			
+			;debugging purpose
+			;if(killstreakNumber != 0){
+			;	MsgBox killstreakNumber:%killstreakNumber%
+			;}
+			
+			if(killstreakNumber=2 AND 2kill = 1){
+				2_KillSound()
+				2kill := 0
+			}
+			if(killstreakNumber=3 AND 3kill = 1){
+				3_KillSound()
+				3kill := 0
+			}
+			if(killstreakNumber=4 AND 4kill = 1){
+				4_KillSound()
+				4kill := 0
+			}
+			if(killstreakNumber=5 AND 5kill = 1){
+				5_KillSound()
+				5kill := 0
+			}
+			if(killstreakNumber=6 AND 6kill = 1){
+				6_KillSound()
+				6kill := 0
+			}
+			if(killstreakNumber=7 AND 7kill = 1){
+				7_KillSound()
+				7kill := 0
+			}
+			
+		}
+		else{
+			; reset for uniq killstreak's sounds triggering per life
+			2kill := 1
+			3kill := 1
+			4kill := 1
+			5kill := 1
+			6kill := 1
+			7kill := 1
+			
+			killstreakNumber := 0
 		}
 		
-		;MsgBox %killstreakNumber%
-		
-		
-		
-		;debugging purpose
-		;if(killstreakNumber != 0){
-		;	MsgBox killstreakNumber:%killstreakNumber%
-		;}
-		
-		if(killstreakNumber=2 AND 2kill = 1){
-			2_KillSound()
-			2kill := 0
-		}
-		if(killstreakNumber=3 AND 3kill = 1){
-			3_KillSound()
-			3kill := 0
-		}
-		if(killstreakNumber=4 AND 4kill = 1){
-			4_KillSound()
-			4kill := 0
-		}
-		if(killstreakNumber=5 AND 5kill = 1){
-			5_KillSound()
-			5kill := 0
-		}
-		if(killstreakNumber=6 AND 6kill = 1){
-			6_KillSound()
-			6kill := 0
-		}
-		if(killstreakNumber=7 AND 7kill = 1){
-			7_KillSound()
-			7kill := 0
-		}
+		;delay in ms
+		Sleep, 50
 		
 	}
-	else{
-		; reset for uniq killstreak's sounds triggering per life
-		2kill := 1
-		3kill := 1
-		4kill := 1
-		5kill := 1
-		6kill := 1
-		7kill := 1
-		
-		killstreakNumber := 0
-	}
-	
-	;delay in ms
-	Sleep, 50
-	
-}
 
 
 isTotalOn(){
