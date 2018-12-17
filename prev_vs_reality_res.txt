@@ -1,0 +1,50 @@
+This is a temp file to list the resolution and check if when the upscaling of the image fails or not:
+
+Native desktop resolution:
+1920x1080
+
+Listing goes as follows (some maybe off by few pixels because I measured near artefact created by compression):
+Reolution set in the configuration of Blockade 3D
+Measured resolution
+Expected resolution with cross multiplication
+
+1280x600
+1920x900
+1920x900
+
+1280x720
+1920x1080
+
+1280x768
+1800x1080
+
+1280x800
+1728x1080
+
+1280x960
+1440x1080
+
+1280x1024
+1358x1080
+
+1360x768
+1916x1080
+
+1366x768
+1920x1080
+
+1400x1050
+1440x1080
+
+1440x900
+1728x1080
+
+1600x900
+1920x1080
+
+1680x1050
+1728x1080
+
+1920x1080
+1920x1080
+1920x1080
