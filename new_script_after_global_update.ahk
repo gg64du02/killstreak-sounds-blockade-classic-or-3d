@@ -30,28 +30,29 @@ ListLines Off
 	Gui, Show
 	return
 
+	Checkbx:
+	guicontrolget, MyCheckboxSameReso
+	guicontrol, enable%MyCheckboxSameReso%, cbx
+	return
+	
 	ButtonOK:
 	GuiClose:
 	GuiEscape:
 	Gui, Submit  ; Save each control's contents to its associated variable.
 	MsgBox You entered:`n%MyCheckbox%`n%MyRadio%`n%MyEdit%
-	ExitApp
+	;ExitApp
 
 
-	Checkbx:
-	guicontrolget, MyCheckboxSameReso
-	guicontrol, enable%MyCheckboxSameReso%, cbx
-	return
 	;=======================================================================
 	;=======================================================================
 	;=======================================================================
 	
-	;TODO insert GUI around here
-	;TODO test the screen ration to decide how to do the cross multiplication
+	;DONE insert GUI around here
+	;TODO test the screen ratio to decide how to do the cross multiplication
 	
 
 	;TODO: need to be speed up way more
-	;TODO: need to add rejection of fa&lse detection on isTotalOn
+	;TODO: need to add rejection of false detection on isTotalOn
 	
 	nativeDesktopRatio := sreenWidth / screenHeight
 	
