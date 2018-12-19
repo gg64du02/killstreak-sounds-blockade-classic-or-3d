@@ -8,17 +8,24 @@ Reolution set in the configuration of Blockade 3D
 Measured resolution
 Expected resolution with cross multiplication
 
+1024x768
+1440x1080
+1365,3x1080
+
 1280x600
 1920x900
 1920x900
 
 1280x720
 1920x1080
+1920x1080
 
 1280x768
 1800x1080
+1800x1080
 
 1280x800
+1728x1080
 1728x1080
 
 1280x960
@@ -41,8 +48,10 @@ Expected resolution with cross multiplication
 
 1600x900
 1920x1080
+1920x1080
 
 1680x1050
+1728x1080
 1728x1080
 
 1920x1080
