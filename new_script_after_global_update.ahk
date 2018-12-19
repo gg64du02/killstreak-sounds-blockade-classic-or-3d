@@ -22,7 +22,7 @@ ListLines Off
 	Gui, Tab, 2
 	Gui, Add, Checkbox, vMyCheckboxSameReso gCheckbx checked, Different resolution
 	Gui, Add, Text,, Please choose the resolution
-	Gui Add, DDL, vcbx w200 hwndhcbx, 1280x600||1280x720||1280x768||1280x800||1280x960||1280x1024||1360x768||1366x768||1400x1050||1440x900||1600x900||1680x1050||1920x1080
+	Gui Add, DDL, vcbx w200 hwndhcbx gDDLsubroutine, 1280x600||1280x720||1280x768||1280x800||1280x960||1280x1024||1360x768||1366x768||1400x1050||1440x900||1600x900||1680x1050||1920x1080
 	Gui, Tab, 3
 	Gui, Add, Text,, CREDITS: freely created by gg64du02 (Steam)`nCREDITS: idea and sounds by [D]arktooth (Steam) with AutoHotKey`n
 	Gui, Tab  ; i.e. subsequently-added controls will not belong to the tab control.
@@ -35,12 +35,21 @@ ListLines Off
 	guicontrol, enable%MyCheckboxSameReso%, cbx
 	return
 	
+	
 	ButtonOK:
 	GuiClose:
 	GuiEscape:
 	Gui, Submit  ; Save each control's contents to its associated variable.
-	MsgBox You entered:`n%MyCheckbox%`n%MyRadio%`n%MyEdit%
+	;MsgBox You entered:`n%MyCheckbox%`n%MyRadio%`n%MyEdit%
 	;ExitApp
+	
+	DDLsubroutine:
+	Gui, Submit,NoHide  ; Save each control's contents to its associated variable.
+	MsgBox lol1
+	if(cbx="1280x720")
+		MsgBox lol2
+	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
+	return
 
 
 	;=======================================================================
@@ -55,6 +64,8 @@ ListLines Off
 	;TODO: need to add rejection of false detection on isTotalOn
 	
 	nativeDesktopRatio := sreenWidth / screenHeight
+	
+	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
 	
 	;TODO: debugging purpose
 	MsgBox nativeDesktopRatio: %nativeDesktopRatio%
