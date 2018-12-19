@@ -22,7 +22,7 @@ ListLines Off
 	Gui, Tab, 2
 	Gui, Add, Checkbox, vMyCheckboxSameReso gCheckbx checked, Different resolution
 	Gui, Add, Text,, Please choose the resolution
-	Gui Add, DDL, vcbx w200 hwndhcbx gDDLsubroutine, 1280x600||1280x720||1280x768||1280x800||1280x960||1280x1024||1360x768||1366x768||1400x1050||1440x900||1600x900||1680x1050||1920x1080
+	Gui Add, DDL, vcbx w200 hwndhcbx gDDLsubroutine, 1024x768||1280x600||1280x720||1280x768||1280x800||1280x960||1280x1024||1360x768||1366x768||1400x1050||1440x900||1600x900||1680x1050||1920x1080
 	Gui, Tab, 3
 	Gui, Add, Text,, CREDITS: freely created by gg64du02 (Steam)`nCREDITS: idea and sounds by [D]arktooth (Steam) with AutoHotKey`n
 	Gui, Tab  ; i.e. subsequently-added controls will not belong to the tab control.
@@ -45,9 +45,31 @@ ListLines Off
 	
 	DDLsubroutine:
 	Gui, Submit,NoHide  ; Save each control's contents to its associated variable.
-	MsgBox lol1
+	;debugging purpose
+	;MsgBox lol1
+	;MsgBox % SubStr("123abc789", 4, 3)
+	;FoundPos := RegExMatch("xxxabc123xyz", "abc.*xyz")  
+	tmpxPostion := RegExMatch(cbx, "x")  
+	;Almost useless since the x would be always? at 5 (unless the dev allow resolution like 640*480)
+	;debugging purpose
+	;MsgBox tmpxPostion: %tmpxPostion%
+	tmpWidth := SubStr(cbx,1,4)
+	;debugging purpose
+	;MsgBox tmpWidth: %tmpWidth%
+	
+	tmpHeight := SubStr(cbx,6,4)
+	;debugging purpose
+	;MsgBox tmpHeight: %tmpHeight%
+	
+	selectedScreenRatio := tmpWidth / tmpHeight
+	;debugging purpose
+	MsgBox selectedScreenRatio: %selectedScreenRatio%
+	
+	
 	if(cbx="1280x720")
 		MsgBox lol2
+		
+	
 	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
 	return
 
