@@ -7,7 +7,7 @@ ListLines Off
 	SysGet, VirtualScreenWidth, 78
 	SysGet, VirtualScreenHeight, 79
 	
-	global sreenWidth   := VirtualScreenWidth
+	global screenWidth   := VirtualScreenWidth
 	global screenHeight := VirtualScreenHeight
 	
 	;=======================================================================
@@ -18,7 +18,7 @@ ListLines Off
 	Gui, Add, Text,, Make sure you are playing with one screen and fullscreen
 	Gui, Add, Text,, Please check the Game settings resolution`n and select the right resolution
 	Gui, Add, Text,, When done, just click Launch`n (a H icon would be in the system tray)
-	Gui, Add, Text,, Detected desktop resolution:%sreenWidth%x%screenHeight%
+	Gui, Add, Text,, Detected desktop resolution:%screenWidth%x%screenHeight%
 	Gui, Tab, 2
 	Gui, Add, Checkbox, vMyCheckboxSameReso gCheckbx checked, Different resolution
 	Gui, Add, Text,, Please choose the resolution
@@ -53,19 +53,56 @@ ListLines Off
 	;Almost useless since the x would be always? at 5 (unless the dev allow resolution like 640*480)
 	;debugging purpose
 	;MsgBox tmpxPostion: %tmpxPostion%
-	tmpWidth := SubStr(cbx,1,4)
+	selectedWidth := SubStr(cbx,1,4)
 	;debugging purpose
-	;MsgBox tmpWidth: %tmpWidth%
+	;MsgBox selectedWidth: %selectedWidth%
 	
-	tmpHeight := SubStr(cbx,6,4)
+	selectedHeight := SubStr(cbx,6,4)
 	;debugging purpose
-	;MsgBox tmpHeight: %tmpHeight%
+	;MsgBox selectedHeight: %selectedHeight%
 	
-	selectedScreenRatio := tmpWidth / tmpHeight
+	selectedScreenRatio := selectedWidth / selectedHeight
 	;debugging purpose
 	MsgBox selectedScreenRatio: %selectedScreenRatio%
 	
+	nativeDesktopRatio := screenWidth / screenHeight
 	
+	;bug in either the game on the unity engine
+	if(cbx="1024x768"){
+		;debugging purpose
+		;MsgBox lol2
+		;the result would be 1440x1080
+		expectedWidth := 1440
+		expectedHeight := 1080
+	} else {
+		;all other resolution and upscale properly
+		;if the native screen ratio is wider than the selected screen
+		if(nativeDesktopRatio>selectedScreenRatio){
+			;TODO
+			;debugging purpose
+			MsgBox lol3
+			;so the screen would be all the way spread verticaly
+			expectedHeight := 1080
+			;width would be calculated
+			expectedWidth := 1920
+			
+		
+		} else {
+			;TODO
+			;debugging purpose
+			MsgBox lol4
+			;so the screen would be all the way spread horizontaly
+			expectedWidth := 1920
+			;height would be calculated
+			expectedHeight := 1080
+		
+		}
+		
+	}
+	
+	;expected resolution
+	
+		
 	if(cbx="1280x720")
 		MsgBox lol2
 		
@@ -85,7 +122,7 @@ ListLines Off
 	;TODO: need to be speed up way more
 	;TODO: need to add rejection of false detection on isTotalOn
 	
-	nativeDesktopRatio := sreenWidth / screenHeight
+	nativeDesktopRatio := screenWidth / screenHeight
 	
 	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
 	
@@ -210,10 +247,10 @@ isPlayerAlive()
 		onceAlive += 1
 		static xIsAlive
 		static yIsAlive
-		global sreenWidth
+		global screenWidth
 		global screenHeight
-		;MsgBox %sreenWidth%,%screenHeight%
-		;xIsAlive := Round(sreenWidth / 2 ,0)+20+7
+		;MsgBox %screenWidth%,%screenHeight%
+		;xIsAlive := Round(screenWidth / 2 ,0)+20+7
 		;yIsAlive := screenHeight - 34 + 15
 		;xIsAlive := 909
 		xIsAlive := 960
