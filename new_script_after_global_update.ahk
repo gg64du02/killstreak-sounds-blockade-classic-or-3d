@@ -78,33 +78,37 @@ ListLines Off
 		;all other resolution and upscale properly
 		;if the native screen ratio is wider than the selected screen
 		if(nativeDesktopRatio>selectedScreenRatio){
-			;TODO
+			;DONE
 			;debugging purpose
-			MsgBox lol3
+			;MsgBox lol3
 			;so the screen would be all the way spread verticaly
-			expectedHeight := 1080
+			expectedHeight := screenHeight
 			;width would be calculated
-			expectedWidth := 1920
+			expectedWidth := screenHeight * selectedWidth / selectedHeight
+			MsgBox expectedWidth: %expectedWidth%
 			
 		
 		} else {
-			;TODO
+			;DONE
 			;debugging purpose
-			MsgBox lol4
+			;MsgBox lol4
 			;so the screen would be all the way spread horizontaly
-			expectedWidth := 1920
+			expectedWidth := screenWidth
 			;height would be calculated
-			expectedHeight := 1080
+			expectedHeight := screenWidth * selectedHeight / selectedWidth
+			MsgBox expectedHeight: %expectedHeight%
 		
 		}
 		
 	}
 	
 	;expected resolution
+	MsgBox expected resolution: %expectedWidth%x%expectedHeight%
 	
 		
-	if(cbx="1280x720")
-		MsgBox lol2
+	;debugging purpose
+	;if(cbx="1280x720")
+	;	MsgBox lol2
 		
 	
 	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
