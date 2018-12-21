@@ -102,6 +102,18 @@ ListLines Off
 		
 	}
 	
+	;expectedWidthTotalOn :=0
+	;expectedHeightTotalOn :=0
+	
+	;check notes_equation.txt
+	expectedWidthTotalOn := ( 0.5 * selectedWidth + 106 ) 
+	expectedHeightTotalOn := ( 1 * selectedHeight - 230 ) 
+	;expectedWidthTotalOn := ( 0.5 * selectedWidth + 106 ) * (expectedWidth / selectedWidth)
+	;expectedHeightTotalOn := ( 1 * selectedHeight - 230 ) * (expectedHeight / selectedHeight)
+	
+	MsgBox expectedWidthTotalOn: %expectedWidthTotalOn%
+	MsgBox expectedHeightTotalOn: %expectedHeightTotalOn%
+	
 	;expected resolution
 	MsgBox expected resolution: %expectedWidth%x%expectedHeight%
 	
