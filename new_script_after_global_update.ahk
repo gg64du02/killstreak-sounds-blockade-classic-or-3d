@@ -260,12 +260,12 @@ isTotalOn(){
 	;ok
 	static xIsAliveTotal
 	static yIsAliveTotal
-	xIsAliveTotal := 1117
-	yIsAliveTotal := 770
+	;xIsAliveTotal := 1117
+	;yIsAliveTotal := 770
 	;MsgBox expectedWidthTotalOn: %expectedWidthTotalOn%
 	;MsgBox expectedHeightTotalOn: %expectedHeightTotalOn%
-	;xIsAliveTotal := expectedWidthTotalOn
-	;yIsAliveTotal := expectedHeightTotalOn
+	xIsAliveTotal := expectedWidthTotalOn
+	yIsAliveTotal := expectedHeightTotalOn
 	PixelGetColor, color, xIsAliveTotal, yIsAliveTotal, RGB
 	
 	
