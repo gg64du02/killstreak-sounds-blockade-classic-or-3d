@@ -174,8 +174,6 @@ ListLines Off
 	7kill := 1
 
 	killstreakNumber := 0
-	
-	MsgBox lol7
 
 
 	;en permanence
@@ -251,6 +249,14 @@ isTotalOn(){
 	;TopLeftX = 1130
 	;TopLeftY = 770
 	
+	global expectedWidthTotalOn
+	global expectedHeightTotalOn
+	
+	;MsgBox isTotalOn:expectedWidthTotalOn: %expectedWidthTotalOn%
+	;MsgBox isTotalOn:expectedHeightTotalOn: %expectedHeightTotalOn%
+	
+	
+	
 	;ok
 	static xIsAliveTotal
 	static yIsAliveTotal
@@ -280,8 +286,8 @@ isTotalOn(){
 ;272727
 isPlayerAlive()
 {
-	;global xIsAlive
-	;global yIsAlive
+	global expectedWidthKillerTagTopRight
+	global expectedHeightKillerTagTopRight
 	static onceAlive
 	
 	;for isAlive() function
@@ -295,10 +301,12 @@ isPlayerAlive()
 		;xIsAlive := Round(screenWidth / 2 ,0)+20+7
 		;yIsAlive := screenHeight - 34 + 15
 		;xIsAlive := 909
-		xIsAlive := 960
-		yIsAlive := 903
-		;xIsAlive := expectedWidthKillerTagTopRight
-		;yIsAlive := expectedHeightKillerTagTopRight
+		;MsgBox isPlayerAlive:expectedWidthKillerTagTopRight: %expectedWidthKillerTagTopRight%
+		;MsgBox isPlayerAlive:expectedHeightKillerTagTopRight: %expectedHeightKillerTagTopRight%
+		;xIsAlive := 960
+		;yIsAlive := 903
+		xIsAlive := expectedWidthKillerTagTopRight
+		yIsAlive := expectedHeightKillerTagTopRight
 		;MsgBox IsAlive:%xIsAlive%,%yIsAlive%
 	}
 	
