@@ -118,11 +118,11 @@ ListLines Off
 	
 	
 	;check notes_equation.txt
-	;expectedWidthKillerTagTopRight := ( 0.5 * selectedWidth) + (-300 )
+	;expectedWidthKillerTagTopRight := ( 0.5 * selectedWidth) + (-300 + 2)
 	;expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 + 3 )  
 	;expectedWidthKillerTagTopRight := 
-	;expectedWidthKillerTagTopRight := ( 0.5 * selectedWidth) + (-300 )  * (expectedWidth / selectedWidth) * (expectedWidth / selectedWidth)
-	expectedWidthKillerTagTopRight := ( 0.5 * screenWidth) + (-300 )  * (expectedWidth / selectedWidth)
+	;expectedWidthKillerTagTopRight := ( 0.5 * selectedWidth) + (-300 + 2)  * (expectedWidth / selectedWidth) * (expectedWidth / selectedWidth)
+	expectedWidthKillerTagTopRight := ( 0.5 * screenWidth) + (-300 + 2)  * (expectedWidth / selectedWidth)
 	expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 + 3 )  * (expectedHeight / selectedHeight)
 	
 	MsgBox expectedWidthKillerTagTopRight: %expectedWidthKillerTagTopRight%
