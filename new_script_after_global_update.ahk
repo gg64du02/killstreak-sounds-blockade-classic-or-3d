@@ -252,6 +252,10 @@ isTotalOn(){
 	static yIsAliveTotal
 	xIsAliveTotal := 1117
 	yIsAliveTotal := 770
+	;MsgBox expectedWidthTotalOn: %expectedWidthTotalOn%
+	;MsgBox expectedHeightTotalOn: %expectedHeightTotalOn%
+	;xIsAliveTotal := expectedWidthTotalOn
+	;yIsAliveTotal := expectedHeightTotalOn
 	PixelGetColor, color, xIsAliveTotal, yIsAliveTotal, RGB
 	
 	
@@ -268,6 +272,7 @@ isTotalOn(){
 }
 
 
+;killertag canvas
 ;272727
 isPlayerAlive()
 {
@@ -288,6 +293,8 @@ isPlayerAlive()
 		;xIsAlive := 909
 		xIsAlive := 960
 		yIsAlive := 903
+		;xIsAlive := expectedWidthKillerTagTopRight
+		;yIsAlive := expectedHeightKillerTagTopRight
 		;MsgBox IsAlive:%xIsAlive%,%yIsAlive%
 	}
 	
