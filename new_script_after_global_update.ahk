@@ -113,8 +113,23 @@ ListLines Off
 	expectedWidthTotalOn := ( 0.5 * screenWidth) + (106 )  * (expectedWidth / selectedWidth)
 	expectedHeightTotalOn := ( 1 * selectedHeight - 230 )  * (expectedHeight / selectedHeight)
 	
-	MsgBox expectedWidthTotalOn: %expectedWidthTotalOn%
-	MsgBox expectedHeightTotalOn: %expectedHeightTotalOn%
+	;MsgBox expectedWidthTotalOn: %expectedWidthTotalOn%
+	;MsgBox expectedHeightTotalOn: %expectedHeightTotalOn%
+	
+	
+	;check notes_equation.txt
+	expectedWidthKillerTagTopRight := ( 0.5 * selectedWidth) + (-300 )
+	expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 )  
+	;expectedWidthKillerTagTopRight := 
+	;expectedWidthKillerTagTopRight := ( 0.5 * screenWidth) + (-300 )  * (expectedWidth / selectedWidth) * (expectedWidth / selectedWidth)
+	;expectedWidthKillerTagTopRight := ( 0.5 * screenWidth) + (-300 )  * (expectedWidth / selectedWidth)
+	;expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 )  * (expectedHeight / selectedHeight)
+	
+	MsgBox expectedWidthKillerTagTopRight: %expectedWidthKillerTagTopRight%
+	MsgBox expectedHeightKillerTagTopRight: %expectedHeightKillerTagTopRight%
+	
+	
+	
 	
 	;expected resolution
 	MsgBox expected resolution: %expectedWidth%x%expectedHeight%
