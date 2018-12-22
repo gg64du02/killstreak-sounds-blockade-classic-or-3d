@@ -37,6 +37,7 @@ ListLines Off
 	
 	
 	ButtonOK:
+	btnOK:=1
 	GuiClose:
 	GuiEscape:
 	Gui, Submit  ; Save each control's contents to its associated variable.
@@ -85,7 +86,7 @@ ListLines Off
 			expectedHeight := screenHeight
 			;width would be calculated
 			expectedWidth := screenHeight * selectedWidth / selectedHeight
-			MsgBox expectedWidth: %expectedWidth%
+			;MsgBox expectedWidth: %expectedWidth%
 			
 		
 		} else {
@@ -96,7 +97,7 @@ ListLines Off
 			expectedWidth := screenWidth
 			;height would be calculated
 			expectedHeight := screenWidth * selectedHeight / selectedWidth
-			MsgBox expectedHeight: %expectedHeight%
+			;MsgBox expectedHeight: %expectedHeight%
 		
 		}
 		
@@ -132,16 +133,17 @@ ListLines Off
 	
 	
 	;expected resolution
-	MsgBox expected resolution: %expectedWidth%x%expectedHeight%
+	;MsgBox expected resolution: %expectedWidth%x%expectedHeight%
 	
-		
 	;debugging purpose
 	;if(cbx="1280x720")
 	;	MsgBox lol2
 		
 	
 	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
-	return
+	if( NOT(btnOK=1) ){
+		return
+	}
 
 
 	;=======================================================================
@@ -172,6 +174,8 @@ ListLines Off
 	7kill := 1
 
 	killstreakNumber := 0
+	
+	MsgBox lol7
 
 
 	;en permanence
