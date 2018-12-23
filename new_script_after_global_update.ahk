@@ -184,10 +184,6 @@ ListLines Off
 				killstreakNumber++
 				;debugging purpose
 				;MsgBox %killstreakNumber%
-				while(isTotalOn=1){
-					isTotalOn := isTotalOn()
-					;sleep, 50
-				}
 			}
 			
 			;MsgBox %killstreakNumber%
@@ -222,6 +218,11 @@ ListLines Off
 			if(killstreakNumber=7 AND 7kill = 1){
 				7_KillSound()
 				7kill := 0
+			}
+			
+			while(isTotalOn=1){
+				isTotalOn := isTotalOn()
+				;sleep, 50
 			}
 			
 		}
