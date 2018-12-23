@@ -35,10 +35,11 @@ ListLines Off
 	guicontrol, enable%MyCheckboxSameReso%, cbx
 	return
 	
+	GuiClose:
+	ExitApp
 	
 	ButtonOK:
 	btnOK:=1
-	GuiClose:
 	GuiEscape:
 	Gui, Submit  ; Save each control's contents to its associated variable.
 	;MsgBox You entered:`n%MyCheckbox%`n%MyRadio%`n%MyEdit%
