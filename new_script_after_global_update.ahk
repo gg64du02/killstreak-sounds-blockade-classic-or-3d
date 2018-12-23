@@ -64,7 +64,7 @@ ListLines Off
 	
 	selectedScreenRatio := selectedWidth / selectedHeight
 	;debugging purpose
-	MsgBox selectedScreenRatio: %selectedScreenRatio%
+	;MsgBox selectedScreenRatio: %selectedScreenRatio%
 	
 	nativeDesktopRatio := screenWidth / screenHeight
 	
@@ -126,8 +126,8 @@ ListLines Off
 	expectedWidthKillerTagTopRight := ( 0.5 * screenWidth) + (-300 + 2)  * (expectedWidth / selectedWidth)
 	expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 + 3 )  * (expectedHeight / selectedHeight)
 	
-	MsgBox expectedWidthKillerTagTopRight: %expectedWidthKillerTagTopRight%
-	MsgBox expectedHeightKillerTagTopRight: %expectedHeightKillerTagTopRight%
+	;MsgBox expectedWidthKillerTagTopRight: %expectedWidthKillerTagTopRight%
+	;MsgBox expectedHeightKillerTagTopRight: %expectedHeightKillerTagTopRight%
 	
 	
 	
@@ -162,7 +162,7 @@ ListLines Off
 	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
 	
 	;TODO: debugging purpose
-	MsgBox nativeDesktopRatio: %nativeDesktopRatio%
+	;MsgBox nativeDesktopRatio: %nativeDesktopRatio%
 
 
 	;initialization for uniq killstreak's sounds triggering per life
