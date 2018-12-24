@@ -74,6 +74,7 @@ ListLines Off
 		;debugging purpose
 		;MsgBox lol2
 		;the result would be 1440x1080
+		;check if the 1440 is only in 1920x1080 (might need to do the formula (dividing by 1024))
 		expectedWidth := 1440
 		expectedHeight := 1080
 	} else {
