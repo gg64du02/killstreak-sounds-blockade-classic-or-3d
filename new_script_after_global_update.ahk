@@ -30,6 +30,7 @@ ListLines Off
 	Gui, Show
 	return
 
+	;TODO: add the checkbox logic
 	Checkbx:
 	guicontrolget, MyCheckboxSameReso
 	guicontrol, enable%MyCheckboxSameReso%, cbx
@@ -69,41 +70,31 @@ ListLines Off
 	
 	nativeDesktopRatio := screenWidth / screenHeight
 	
-	;bug in either the game on the unity engine
-	if(cbx="1024x768"){
+	;all other resolution and upscale properly
+	;if the native screen ratio is wider than the selected screen
+	if(nativeDesktopRatio>selectedScreenRatio){
+		;DONE
 		;debugging purpose
-		;MsgBox lol2
-		;the result would be 1440x1080
-		;check if the 1440 is only in 1920x1080 (might need to do the formula (dividing by 1024))
-		expectedWidth := 1440
-		expectedHeight := 1080
+		;MsgBox lol3
+		;so the screen would be all the way spread verticaly
+		expectedHeight := screenHeight
+		;width would be calculated
+		expectedWidth := screenHeight * selectedWidth / selectedHeight
+		;MsgBox expectedWidth: %expectedWidth%
+		
+	
 	} else {
-		;all other resolution and upscale properly
-		;if the native screen ratio is wider than the selected screen
-		if(nativeDesktopRatio>selectedScreenRatio){
-			;DONE
-			;debugging purpose
-			;MsgBox lol3
-			;so the screen would be all the way spread verticaly
-			expectedHeight := screenHeight
-			;width would be calculated
-			expectedWidth := screenHeight * selectedWidth / selectedHeight
-			;MsgBox expectedWidth: %expectedWidth%
-			
-		
-		} else {
-			;DONE
-			;debugging purpose
-			;MsgBox lol4
-			;so the screen would be all the way spread horizontaly
-			expectedWidth := screenWidth
-			;height would be calculated
-			expectedHeight := screenWidth * selectedHeight / selectedWidth
-			;MsgBox expectedHeight: %expectedHeight%
-		
-		}
-		
+		;DONE
+		;debugging purpose
+		;MsgBox lol4
+		;so the screen would be all the way spread horizontaly
+		expectedWidth := screenWidth
+		;height would be calculated
+		expectedHeight := screenWidth * selectedHeight / selectedWidth
+		;MsgBox expectedHeight: %expectedHeight%
+	
 	}
+	
 	
 	;expectedWidthTotalOn :=0
 	;expectedHeightTotalOn :=0
