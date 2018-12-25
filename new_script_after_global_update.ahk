@@ -113,9 +113,8 @@ ListLines Off
 	;expectedHeightTotalOn := ( 1 * selectedHeight - 230 ) 
 	;1109 in 1920x1080 w/ 1024x768
 	;expectedWidthTotalOn := ( 0.5 * selectedWidth + 106 )  * (expectedWidth / selectedWidth)
-	expectedWidthTotalOn := ( 0.5 * screenWidth) + (106 )  * (expectedWidth / selectedWidth)
-	expectedHeightTotalOn := ( 1 * selectedHeight - 230 )  * (expectedHeight / selectedHeight)
-	
+	expectedWidthTotalOn := Round( ( 0.5 * screenWidth) + (106 )  * (expectedWidth / selectedWidth) )
+	expectedHeightTotalOn := Round( ( 1 * selectedHeight - 230 )  * (expectedHeight / selectedHeight) )	
 	;MsgBox expectedWidthTotalOn: %expectedWidthTotalOn%
 	;MsgBox expectedHeightTotalOn: %expectedHeightTotalOn%
 	
@@ -125,8 +124,8 @@ ListLines Off
 	;expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 + 3 )  
 	;expectedWidthKillerTagTopRight := 
 	;expectedWidthKillerTagTopRight := ( 0.5 * selectedWidth) + (-300 + 2)  * (expectedWidth / selectedWidth) * (expectedWidth / selectedWidth)
-	expectedWidthKillerTagTopRight := ( 0.5 * screenWidth) + (-300 + 2)  * (expectedWidth / selectedWidth)
-	expectedHeightKillerTagTopRight := ( 1 * selectedHeight - 130 + 3 )  * (expectedHeight / selectedHeight)
+	expectedWidthKillerTagTopRight := Round( ( 0.5 * screenWidth) + (-300 + 2)  * (expectedWidth / selectedWidth) )
+	expectedHeightKillerTagTopRight :=  Round( ( 1 * selectedHeight - 130 + 3 )  * (expectedHeight / selectedHeight) )
 	
 	;MsgBox expectedWidthKillerTagTopRight: %expectedWidthKillerTagTopRight%
 	;MsgBox expectedHeightKillerTagTopRight: %expectedHeightKillerTagTopRight%
@@ -153,17 +152,19 @@ ListLines Off
 	;=======================================================================
 	
 	;DONE insert GUI around here
-	;TODO test the screen ratio to decide how to do the cross multiplication
+	;DONE test the screen ratio to decide how to do the cross multiplication
 	
 
-	;TODO: need to be speed up way more
-	;TODO: need to add rejection of false detection on isTotalOn
+	;DONE: need to be speed up way more
+	;TODO: need to add rejection of false detection on isTotalOn: done ?
+	;TODO: test all screen size upscaling combinaison
+	;TODO: detection of: one a kill without headshot
 	
 	nativeDesktopRatio := screenWidth / screenHeight
 	
 	;MsgBox MyCheckboxSameReso: %MyCheckboxSameReso%
 	
-	;TODO: debugging purpose
+	;debugging purpose
 	;MsgBox nativeDesktopRatio: %nativeDesktopRatio%
 
 
@@ -224,7 +225,8 @@ ListLines Off
 			
 			while(isTotalOn=1){
 				isTotalOn := isTotalOn()
-				;sleep, 50
+				;escaping from 3 black frame onto the sample footage
+				sleep, 50
 			}
 			
 		}
