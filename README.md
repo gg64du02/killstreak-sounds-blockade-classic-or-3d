@@ -18,8 +18,13 @@ Restart if you did not meet the requirements on the first start.
 
 Enjoy.
 
-
 ## PREVIEW:
+
+On Blockade Classic:
+
+https://youtu.be/FhPz4h6s3Bk
+
+On Blockade 3D (before global update)
 
 https://www.youtube.com/watch?v=wsqemdEPgCA
 
