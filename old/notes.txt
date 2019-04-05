@@ -30,3 +30,9 @@
 		}
 		
 		
+		
+		
+public static float YRES(float y)
+{
+	return y * ((float)Screen.height / 768f) + 0.5f;
+}
