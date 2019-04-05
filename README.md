@@ -1,4 +1,4 @@
-# killstreak-sounds-blockade3d (work in progress: not working after global update)
+# killstreak-sounds-blockade3d (work for 'blockade classic', work in progress for 'blockade 3d')
 
 ## WHAT IS THIS:
 
