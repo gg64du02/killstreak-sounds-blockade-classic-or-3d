@@ -5,11 +5,11 @@
 If you are interrested into getting "double/multi/mega/ultra kill"'s 
 sounds on Blockade 3D (Steam): then run this script.
 
-## HOW TO USE IT:
+## HOW TO USE IT (Blockade Classic):
 
 Install AutoHotkey available at https://autohotkey.com/
 
-Run the killstreak-sounds-blockade3d_v*.ahk
+Run the killstreak-sounds-blockade_classic_v*.ahk
 
 Please follow instructions in the displayed message.
 
