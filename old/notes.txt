@@ -1,0 +1,32 @@
+
+		if (killstreak_draw)
+		{
+			if (killstreak_time + 3f > Time.time)
+			{
+				gui_style2.normal.textColor = new Color(0f, 0f, 0f, 1f);
+				GUI.Label(new Rect((float)Screen.width / 2f - 20f + 1f, GUIManager.YRES(220f) + 1f, 200f, 32f), "+" + killstreak.ToString(), gui_style2);
+				if (killstreak_color == 0)
+				{
+					gui_style2.normal.textColor = new Color(0f, 0f, 1f, 1f);
+				}
+				else if (killstreak_color == 1)
+				{
+					gui_style2.normal.textColor = new Color(1f, 0f, 0f, 1f);
+				}
+				else if (killstreak_color == 2)
+				{
+					gui_style2.normal.textColor = new Color(0f, 1f, 0f, 1f);
+				}
+				else if (killstreak_color == 3)
+				{
+					gui_style2.normal.textColor = new Color(1f, 1f, 0f, 1f);
+				}
+				GUI.Label(new Rect((float)Screen.width / 2f - 20f, GUIManager.YRES(220f), 200f, 32f), "+" + killstreak.ToString(), gui_style2);
+			}
+			else
+			{
+				killstreak_draw = false;
+			}
+		}
+		
+		
