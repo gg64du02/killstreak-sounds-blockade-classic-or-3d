@@ -304,9 +304,9 @@ guessNumber(){
 		yColor9 := Round( (((screenHeight * 220 ) / 768) + 0.5) + 1 + 6 , 0) +7
 		
 		
-		MsgBox 1:%xColor1%,%yColor1%, 2:%xColor2%,%yColor2%, 3:%xColor3%,%yColor3%
-		MsgBox 4:%xColor4%,%yColor4%, 5:%xColor5%,%yColor5%, 6:%xColor6%,%yColor6%
-		MsgBox 7:%xColor7%,%yColor7%, 8:%xColor8%,%yColor8%, 9:%xColor9%,%yColor9%
+		;MsgBox 1:%xColor1%,%yColor1%, 2:%xColor2%,%yColor2%, 3:%xColor3%,%yColor3%
+		;MsgBox 4:%xColor4%,%yColor4%, 5:%xColor5%,%yColor5%, 6:%xColor6%,%yColor6%
+		;MsgBox 7:%xColor7%,%yColor7%, 8:%xColor8%,%yColor8%, 9:%xColor9%,%yColor9%
 	}
 	
 	
